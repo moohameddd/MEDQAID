@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Medical Quality Aid provides comprehensive healthcare solutions tailored to your needs.">
+    <meta name="author" content="Medical Quality Aid">
+    <title>Medical Quality Aid | Comprehensive Healthcare Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Universal Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('images/43373336-1882-4f14-b075-682561a95349.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: rgba(0, 143, 72, 0.687);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo a {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #f0f3f5;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin: 0 15px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .nav-menu a:hover {
+            color: #0056b3;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #004080;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-item {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .service-item img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-item p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* FAQs */
+        .accordion {
+            width: 100%;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+        }
+
+        .faq-item h3 {
+            cursor: pointer;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .faq-content {
+            display: none;
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #004080;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: inline-block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.jpeg"Medical Quality Aid Logo">
+                    </a>
+                </div>
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Medical Quality Aid<p>(MedQAid)</p></h1>
+                    <p>Personalized Healthcare, Tailored to Your seamless medical journey begins here. Our dedicated team ensures you receive the best care and support throughout your healthcare experience.</p>
+                    <a href="#services" class="btn primary-btn">Explore Our Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>MedQAid offers tailored healthcare support, ensuring comfort and efficiency throughout the medical journey.</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <img src="images/8c75efbd-a8cc-494e-b6a7-a50d2f49072a.jpeg" alt="Medical Escort Services">
+                        <h3>Medical Escort Services</h3>
+                        <p>We provide trained professionals to accompany you to medical appointments.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="images/2ee34516-64e5-44bf-8dee-8159e58cdf10.jpeg" alt="Appointment Scheduling">
+                        <h3>Appointment Scheduling</h3>
+                        <p>We manage your medical appointments with ease.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="images/0ed73c18-8316-4448-94f3-438a782610cd.jpeg" alt="Case Management">
+                        <h3>Case Management</h3>
+                        <p>Full support from diagnosis to recovery.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="images/6836c21e-89d7-4dfd-aff5-5cccbd85fb6e.jpeg" alt="Transportation Services">
+                        <h3>Transportation Services</h3>
+                        <p>Reliable transportation to all your medical visits.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs Section -->
+        <section id="faqs" class="section faqs">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="accordion">
+                    <div class="faq-item">
+                        <h3>What services do you offer?</h3>
+                        <div class="faq-content">
+                            <p>We offer medical escort services, appointment scheduling, case management, and transportation services.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do I book your services?</h3>
+                        <div class="faq-content">
+                            <p>Contact us through our Email or give us a call.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Have questions or need assistance? Reach out to us!</p>
+                <div class="contact-grid">
+                    <div class="contact-form">
+                        <form id="contact-form" name="contact-form" action="YOUR_FORM_ACTION_URL">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="contact-details">
+                        <p><strong>Phone:</strong> coming soon</p>
+                        <p><strong>Email:</strong> coming soon</p>
+                        <p><strong>Location:</strong> Florida, USA</p>
+                        <p><strong>Desgined by:</strong> Eng/mohamed said</p>
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chatbot (optional) -->
+        <section id="chatbot">
+            <script>
+                var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+                (function(){
+                    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                    s1.async = true;
+                    s1.src = 'https://embed.tawk.to/YOUR_TAWK_ID/1abcde123';
+                    s1.charset = 'UTF-8';
+                    s1.setAttribute('crossorigin','*');
+                    s0.parentNode.insertBefore(s1, s0);
+                })();
+            </script>
+        </section>
+
+        <!-- PWA (optional) -->
+        <link rel="manifest" href="/manifest.json">
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js')
+                .then(function(reg) {
+                    console.log('Service Worker Registered!', reg);
+                });
+            }
+        </script>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Medical Quality Aid. All Rights Reserved. <a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle navigation menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // FAQs accordion behavior
+        const faqItems = document.querySelectorAll('.faq-item h3');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const faqContent = item.nextElementSibling;
+                faqContent.style.display = faqContent.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+
+</html>
