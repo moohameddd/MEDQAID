@@ -130,3 +130,11 @@ const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 if (isMobile) {
     document.body.classList.add('mobile');
 }
+function toggleBio(member) {
+    const bio = member.querySelector('.bio');
+    if (bio.classList.contains('hidden')) {
+        bio.classList.remove('hidden');
+    } else {
+        bio.classList.add('hidden');
+    }
+}
